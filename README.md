@@ -1,2 +1,2 @@
-# onuw
-One Night Ultimate Werewolf
+# ONE NIGHT ULTIMATE WEREWOLF
+
