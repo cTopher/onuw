@@ -1,9 +1,10 @@
 import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
 import * as express from 'express'
+import * as session from 'express-session'
 import {NextFunction, Request, Response} from 'express'
 import * as morgan from 'morgan'
-import {apiRouter} from './api.router'
+import {router} from './api.router'
 
 const app = express()
 
@@ -21,10 +22,16 @@ function configure() {
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({extended: true}))
   app.use(cookieParser('AWESOME SECRET DEVELOPMENT SH1T'))
+  app.use(session({
+    secret: 'uw mama is een secret',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {}
+  }))
 }
 
 function initRoutes() {
-  app.use('/api', apiRouter)
+  app.use('/api', router)
 }
 
 function serveStaticFiles() {

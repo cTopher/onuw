@@ -3,7 +3,7 @@ import './app.scss'
 
 export const appComponent: IComponentOptions = {
   template: require('./app.html'),
-  bindings: {},
+  bindings: {players: '<'},
   controller: () => ({}),
   controllerAs: 'vm',
 }

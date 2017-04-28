@@ -11,7 +11,7 @@ export class EventBus {
     this.socket.on('connection', (client) => this.onConnection(client))
   }
 
-  emit(type: EventType, event: Event) {
+  emit(type: EventType, event: any) {
     this.socket.emit(type, event)
   }
 
