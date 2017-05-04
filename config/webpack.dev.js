@@ -36,8 +36,7 @@ module.exports = webpackMerge(commonConfig, {
     stats: 'minimal',
     proxy: {
       '/api': server(),
-      '/img': server(),
-      '/lang': server(),
+      '/role': server(),
       '/socket.io': server(),
     }
   }

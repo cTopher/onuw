@@ -2,6 +2,7 @@ import * as bodyParser from 'body-parser'
 import * as cookieParser from 'cookie-parser'
 import * as express from 'express'
 import * as session from 'express-session'
+import * as path from 'path'
 import {NextFunction, Request, Response} from 'express'
 import * as morgan from 'morgan'
 import {router} from './api.router'
@@ -35,7 +36,7 @@ function initRoutes() {
 }
 
 function serveStaticFiles() {
-  // app.use(express.static(__dirname + '../../client'))
+  app.use(express.static(path.join(__dirname, '../../resources')))
 }
 
 function handleErrors() {

@@ -1,0 +1,18 @@
+#app pick-roles {
+  display: flex;
+  flex: 1;
+
+  h1 {
+    margin-left: 1em;
+  }
+
+  card {
+    padding: 1em;
+
+    &:not(.selected) {
+      opacity: .4;
+    }
+
+  }
+
+}

@@ -1,1 +1,9 @@
-<h1>Pick {{vm.game.players + 3}} roles</h1>
+<md-content flex layout="column">
+  <h1>Pick {{vm.players.length + 3}} roles ({{vm.selectedRoles.length}} selected)</h1>
+
+  <div layout="row" layout-wrap>
+    <card ng-repeat="card in vm.cards" ng-click="vm.toggle(card)" ng-class="{selected:card.selected}">
+      <role-card role="card.role"></role-card>
+    </card>
+  </div>
+</md-content>
